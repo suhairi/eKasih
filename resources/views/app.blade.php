@@ -9,13 +9,13 @@
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 
 	<!-- Fonts -->
-	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+	<link href="{{ asset('/css/google.roboto.css') }}" rel="stylesheet">
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<script src="{{ asset('js/html5shiv.js') }}"></script>
+  		<script src="{{ asset('js/respond.min.js') }}"></script>
 	<![endif]-->
 </head>
 <body>
@@ -46,37 +46,36 @@
 					@else
 
 
-						    {{--@if(Auth::user()->hasRole('root'))--}}
-                            {{--<ul class="nav navbar-nav navbar-right">--}}
-                                {{--<li><a href="#">Root Menu 1</a></li>--}}
-                                {{--<li><a href="#">Root Menu 2</a></li>--}}
-                                {{--<li><a href="#">Root Menu 3</a></li>--}}
-                                {{--<li><a href="#">Root Menu 4</a></li>--}}
-                            {{--</ul>--}}
-                        {{--@endif--}}
+                        @if(Auth::user()->hasRole('root'))
+                            <ul class="nav navbar-nav">
+                                <li><a href="#">Root Menu 1</a></li>
+                                <li><a href="#">Root Menu 2</a></li>
+                                <li><a href="#">Root Menu 3</a></li>
+                                <li><a href="#">Root Menu 4</a></li>
+                            </ul>
+                        @endif
 
-                        {{--@if(Auth::user()->hasRole('administrator'))--}}
-                            {{--<ul class="nav navbar-nav navbar-right">--}}
-                                {{--<li><a href="#">Admin Menu 1</a></li>--}}
-                                {{--<li><a href="#">Admin Menu 2</a></li>--}}
-                                {{--<li><a href="#">Admin Menu 3</a></li>--}}
-                                {{--<li><a href="#">Admin Menu 4</a></li>--}}
-                            {{--</ul>--}}
-                        {{--@endif--}}
+                        @if(Auth::user()->hasRole('administrator'))
+                            <ul class="nav navbar-nav">
+                                <li><a href="#">Admin Menu 1</a></li>
+                                <li><a href="#">Admin Menu 2</a></li>
+                                <li><a href="#">Admin Menu 3</a></li>
+                                <li><a href="#">Admin Menu 4</a></li>
+                            </ul>
+                        @endif
 
 
-
-                        {{--@if(Auth::user()->hasRole('manager'))--}}
-                            {{--<ul class="nav navbar-nav navbar-right">--}}
-                                {{--<li><a href="#">Manager Menu 1</a></li>--}}
-                                {{--<li><a href="#">Manager Menu 2</a></li>--}}
-                                {{--<li><a href="#">Manager Menu 3</a></li>--}}
-                                {{--<li><a href="#">Manager Menu 4</a></li>--}}
-                            {{--</ul>--}}
-                        {{--@endif--}}
+                        @if(Auth::user()->hasRole('manager'))
+                            <ul class="nav navbar-nav">
+                                <li><a href="#">Manager Menu 1</a></li>
+                                <li><a href="#">Manager Menu 2</a></li>
+                                <li><a href="#">Manager Menu 3</a></li>
+                                <li><a href="#">Manager Menu 4</a></li>
+                            </ul>
+                        @endif
 
                         @if(Auth::user()->hasRole('company manager'))
-                            <ul class="nav navbar-nav navbar-right">
+                            <ul class="nav navbar-nav">
                                 <li><a href="#">CManager Menu 1</a></li>
                                 <li><a href="#">CManager Menu 2</a></li>
                                 <li><a href="#">CManager Menu 3</a></li>
@@ -85,21 +84,20 @@
                         @endif
 
                          @if(Auth::user()->hasRole('user'))
-                            <ul class="nav navbar-nav navbar-right">
+                            <ul class="nav navbar-nav">
                                 <li><a href="#">User Menu 1</a></li>
                                 <li><a href="#">User Menu 2</a></li>
                                 <li><a href="#">User Menu 3</a></li>
                                 <li><a href="#">User Menu 4</a></li>
                             </ul>
                         @endif
-                            <li class="dropdown">
+
+                        <li class="dropdown">
+
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
-
-
 							</ul>
-
 
 						</li>
 					@endif
@@ -111,7 +109,7 @@
 	@yield('content')
 
 	<!-- Scripts -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 </body>
 </html>

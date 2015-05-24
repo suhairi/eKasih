@@ -55,7 +55,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         } else {
             return $this->checkIfUserHasRole($roles);
         }
-
         return false;
     }
 
@@ -66,5 +65,4 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     private function checkIfUserHasRole($need_role) {
         return (strtolower($need_role) == strtolower($this->have_role->name)) ? true : false;
     }
-
 }

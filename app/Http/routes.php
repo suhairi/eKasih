@@ -24,14 +24,24 @@ Route::get('/dashboard', 'DashboardController@index');
  *  #############   ROOT   ####################
  */
 
-Route::get('/root', 'RootController@index');
+Route::get('/root', [
+    'middleware'    => ['auth', 'roles'],
+    'roles'         => ['root'],
+    'as'            => 'root',
+    'uses'          => 'RootController@index',
+    ]);
 
 
 /*
  *  #############   ADMINISTRATOR   ####################
  */
 
-Route::get('/administrator', 'AdministratorController@index');
+Route::get('/administrator', [
+    'middleware'    => ['auth', 'roles'],
+    'roles'         => ['administrator'],
+    'as'            => 'administrator',
+    'uses'          => 'AdministratorController@index'
+]);
 
 
 /*

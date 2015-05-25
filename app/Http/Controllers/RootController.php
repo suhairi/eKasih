@@ -7,10 +7,6 @@ use Illuminate\Http\Request;
 
 class RootController extends Controller {
 
-    public function __construct() {
-
-        $this->middleware('roles', ['role' => 'root']);
-    }
 
 	/**
 	 * Display a listing of the resource.

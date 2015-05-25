@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 class CManagerController extends Controller {
 
+
+
 	/**
 	 * Display a listing of the resource.
 	 *

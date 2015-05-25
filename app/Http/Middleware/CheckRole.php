@@ -19,12 +19,9 @@ class CheckRole {
             return $next($request);
         }
 
-        return response([
-            'error' => [
-                    'code'          => 'INSUFFICIENT_ROLE',
-                    'description'   => 'You are not authorized to access this resource.'
-            ]
-        ], 401);
+        return redirect('/logout');
+
+        return response()->view('errors.401')->header('Content-Type', 'INSUFFICIENT_ROLE');
 
 		return $next($request);
 	}

@@ -24,43 +24,83 @@ Route::get('/dashboard', 'DashboardController@index');
  *  #############   ROOT   ####################
  */
 
-Route::get('/root', [
+Route::group([
     'middleware'    => ['auth', 'roles'],
     'roles'         => ['root'],
-    'as'            => 'root',
-    'uses'          => 'RootController@index',
+], function() {
+
+    Route::get('/root', [
+        'as' => 'root',
+        'uses' => 'RootController@index',
     ]);
 
+});
 
 /*
  *  #############   ADMINISTRATOR   ####################
  */
 
-Route::get('/administrator', [
+Route::group([
     'middleware'    => ['auth', 'roles'],
     'roles'         => ['administrator'],
-    'as'            => 'administrator',
-    'uses'          => 'AdministratorController@index'
-]);
+], function() {
+
+    Route::get('/administrator', [
+        'as' => 'administrator',
+        'uses' => 'AdministratorController@index'
+    ]);
+
+});
 
 
 /*
  *  #############   MANAGER   ####################
  */
 
-Route::get('/manager', 'CManagerController@index');
+Route::group([
+    'middleware'    => ['auth', 'roles'],
+    'roles'         => ['manager'],
+], function() {
+
+    Route::get('/manager', [
+        'as'            => 'manager',
+        'uses'          => 'CManagerController@index'
+    ]);
+
+});
+
 
 
 /*
  *  #############   COMPANY MANAGER   ####################
  */
 
-Route::get('/cmanager', 'CManagerController@index');
+Route::group([
+    'middleware'    => ['auth', 'roles'],
+    'roles'         => ['cmanager'],
+], function() {
+
+    Route::get('/cmanager', [
+        'as'            => 'cmanager',
+        'uses'          => 'CManagerController@index'
+    ]);
+
+});
 
 
 /*
  *  #############   USER   ####################
  */
 
-Route::get('/user', 'UserController@index');
+Route::group([
+    'middleware'    => ['auth', 'roles'],
+    'roles'         => ['user'],
+], function() {
+
+    Route::get('/user', [
+        'as' => 'administrator',
+        'uses' => 'UserController@index'
+    ]);
+
+});
 

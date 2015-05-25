@@ -11,24 +11,46 @@
 |
 */
 
-Route::get('/', [
-    'middleware'    => ['auth'],
-    'uses'          => 'WelcomeController@index'
-]);
+Route::get('/', 'HomeController@index');
 
-Route::get('home', [
-    'middleware'    => ['auth', 'roles'],
-    'roles'         => ['root', 'administrator', 'manager', 'company manager', 'user'],
-    'uses'          => 'HomeController@index',
-]);
+Route::get('/login', 'HomeController@getLogin');
+Route::post('/login', 'HomeController@postLogin');
 
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
+Route::get('/logout', 'HomeController@logout');
 
-Route::get('user/{user}', [
-    'middleware'    => ['auth', 'roles'],
-    'uses'          => 'UserController@index',
-    'roles'         => ['administrator', 'manager'],
-]);
+Route::get('/dashboard', 'DashboardController@index');
+
+/*
+ *  #############   ROOT   ####################
+ */
+
+Route::get('/root', 'RootController@index');
+
+
+/*
+ *  #############   ADMINISTRATOR   ####################
+ */
+
+Route::get('/administrator', 'AdministratorController@index');
+
+
+/*
+ *  #############   MANAGER   ####################
+ */
+
+Route::get('/manager', 'CManagerController@index');
+
+
+/*
+ *  #############   COMPANY MANAGER   ####################
+ */
+
+Route::get('/cmanager', 'CManagerController@index');
+
+
+/*
+ *  #############   USER   ####################
+ */
+
+Route::get('/user', 'UserController@index');
+

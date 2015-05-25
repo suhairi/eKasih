@@ -38,61 +38,61 @@
 
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
-						<li><a href="{{ url('/auth/login') }}">Login</a></li>
-						<li><a href="{{ url('/auth/register') }}">Register</a></li>
+						{{--<li><a href="{{ url('/login') }}">Login</a></li>--}}
+						{{--<li><a href="{{ url('/auth/register') }}">Register</a></li>--}}
 					@else
 
 
-                        {{--@if(Auth::user()->hasRole('root'))--}}
-                            {{--<ul class="nav navbar-nav">--}}
-                                {{--<li><a href="#">Root Menu 1</a></li>--}}
-                                {{--<li><a href="#">Root Menu 2</a></li>--}}
-                                {{--<li><a href="#">Root Menu 3</a></li>--}}
-                                {{--<li><a href="#">Root Menu 4</a></li>--}}
-                            {{--</ul>--}}
-                        {{--@endif--}}
+                        @if(Auth::user()->hasRole('root'))
+                            <ul class="nav navbar-nav">
+                                <li><a href="#">Root Menu 1</a></li>
+                                <li><a href="#">Root Menu 2</a></li>
+                                <li><a href="#">Root Menu 3</a></li>
+                                <li><a href="#">Root Menu 4</a></li>
+                            </ul>
+                        @endif
 
-                        {{--@if(Auth::user()->hasRole('administrator'))--}}
-                            {{--<ul class="nav navbar-nav">--}}
-                                {{--<li><a href="#">Admin Menu 1</a></li>--}}
-                                {{--<li><a href="#">Admin Menu 2</a></li>--}}
-                                {{--<li><a href="#">Admin Menu 3</a></li>--}}
-                                {{--<li><a href="#">Admin Menu 4</a></li>--}}
-                            {{--</ul>--}}
-                        {{--@endif--}}
+                        @if(Auth::user()->hasRole('administrator'))
+                            <ul class="nav navbar-nav">
+                                <li><a href="#">Admin Menu 1</a></li>
+                                <li><a href="#">Admin Menu 2</a></li>
+                                <li><a href="#">Admin Menu 3</a></li>
+                                <li><a href="#">Admin Menu 4</a></li>
+                            </ul>
+                        @endif
 
 
-                        {{--@if(Auth::user()->hasRole('manager'))--}}
-                            {{--<ul class="nav navbar-nav">--}}
-                                {{--<li><a href="#">Manager Menu 1</a></li>--}}
-                                {{--<li><a href="#">Manager Menu 2</a></li>--}}
-                                {{--<li><a href="#">Manager Menu 3</a></li>--}}
-                                {{--<li><a href="#">Manager Menu 4</a></li>--}}
-                            {{--</ul>--}}
-                        {{--@endif--}}
+                        @if(Auth::user()->hasRole('manager'))
+                            <ul class="nav navbar-nav">
+                                <li><a href="#">Manager Menu 1</a></li>
+                                <li><a href="#">Manager Menu 2</a></li>
+                                <li><a href="#">Manager Menu 3</a></li>
+                                <li><a href="#">Manager Menu 4</a></li>
+                            </ul>
+                        @endif
 
-                        {{--@if(Auth::user()->hasRole('company manager'))--}}
-                            {{--<ul class="nav navbar-nav">--}}
-                                {{--<li><a href="#">CManager Menu 1</a></li>--}}
-                                {{--<li><a href="#">CManager Menu 2</a></li>--}}
-                                {{--<li><a href="#">CManager Menu 3</a></li>--}}
-                                {{--<li><a href="#">CManager Menu 4</a></li>--}}
-                            {{--</ul>--}}
-                        {{--@endif--}}
+                        @if(Auth::user()->hasRole('company manager'))
+                            <ul class="nav navbar-nav">
+                                <li><a href="#">CManager Menu 1</a></li>
+                                <li><a href="#">CManager Menu 2</a></li>
+                                <li><a href="#">CManager Menu 3</a></li>
+                                <li><a href="#">CManager Menu 4</a></li>
+                            </ul>
+                        @endif
 
-                         {{--@if(Auth::user()->hasRole('user'))--}}
-                            {{--<ul class="nav navbar-nav">--}}
-                                {{--<li><a href="#">User Menu 1</a></li>--}}
-                                {{--<li><a href="#">User Menu 2</a></li>--}}
-                                {{--<li><a href="#">User Menu 3</a></li>--}}
-                                {{--<li><a href="#">User Menu 4</a></li>--}}
-                            {{--</ul>--}}
-                        {{--@endif--}}
+                         @if(Auth::user()->hasRole('user'))
+                            <ul class="nav navbar-nav">
+                                <li><a href="#">User Menu 1</a></li>
+                                <li><a href="#">User Menu 2</a></li>
+                                <li><a href="#">User Menu 3</a></li>
+                                <li><a href="#">User Menu 4</a></li>
+                            </ul>
+                        @endif
 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/auth/logout') }}">Log Keluar</a></li>
+                                <li><a href="{{ url('/logout') }}">Logout</a></li>
                             </ul>
                         </li>
 					@endif

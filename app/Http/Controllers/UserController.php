@@ -9,11 +9,9 @@ class UserController extends Controller {
 
 	public function index() {
 
-        return 'here';
+        return view('home');
     }
 
-    public function register() {
-        return view('auth.register');
-    }
+
 
 }

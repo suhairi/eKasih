@@ -9,7 +9,7 @@
 				<div class="panel-heading">Create User</div>
 				<div class="panel-body">
 
-                <h1>Create User</h1>
+                <h1>Create User...</h1>
 
                 <hr />
 

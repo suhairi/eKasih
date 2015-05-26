@@ -3,7 +3,8 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
+use Request;
 
 class DashboardController extends Controller {
 
@@ -29,6 +30,14 @@ class DashboardController extends Controller {
         if(strtolower(\Auth::user()->role->name) == 'user')
             return redirect('/user');
 	}
+
+    public function changePassword() {
+        return view('changePassword');
+    }
+
+    public function postChangePassword() {
+        return Request::all();
+    }
 
 
 

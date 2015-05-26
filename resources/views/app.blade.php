@@ -4,7 +4,9 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Laravel</title>
+	<title>MBAS : KPKT</title>
+
+	<link rel="shortcut icon" href="{{{ asset('images/favicon__.png') }}}">
 
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 
@@ -28,7 +30,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Laravel</a>
+				<a class="navbar-brand" href="#">eKasih</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -73,7 +75,7 @@
 
                         @if(Auth::user()->hasRole('company manager'))
                             <ul class="nav navbar-nav">
-                                <li><a href="#">CManager Menu 1</a></li>
+                                <li><a href="/cmanager/create-user">Create User</a></li>
                                 <li><a href="#">CManager Menu 2</a></li>
                                 <li><a href="#">CManager Menu 3</a></li>
                                 <li><a href="#">CManager Menu 4</a></li>
@@ -92,6 +94,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ url('/dashboard/changePassword') }}">Change Password</a></li>
                                 <li><a href="{{ url('/logout') }}">Logout</a></li>
                             </ul>
                         </li>

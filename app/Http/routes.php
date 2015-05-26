@@ -18,10 +18,21 @@ Route::post('/login', 'HomeController@postLogin');
 
 Route::get('/logout', 'HomeController@logout');
 
-Route::get('/dashboard', 'DashboardController@index');
+/*
+ *  ######################   ANY USER   #####################
+ */
+
+Route::group([
+    'middleware'    => ['auth'],
+], function() {
+
+    Route::get('/dashboard', 'DashboardController@index');
+    Route::get('/dashboard/changePassword', 'DashboardController@changePassword');
+    Route::post('/dashboard/changePassword', 'DashboardController@postChangePassword');
+});
 
 /*
- *  #############   ROOT   ####################
+ *  ######################   ROOT   #####################
  */
 
 Route::group([
@@ -77,13 +88,25 @@ Route::group([
 
 Route::group([
     'middleware'    => ['auth', 'roles'],
-    'roles'         => ['cmanager'],
+    'roles'         => ['company manager'],
 ], function() {
 
     Route::get('/cmanager', [
-        'as'            => 'cmanager',
-        'uses'          => 'CManagerController@index'
+        'as'        => 'cmanager',
+        'uses'      => 'CManagerController@index'
     ]);
+
+    Route::get('/cmanager/create-user', [
+        'as'        => 'create-user',
+        'uses'      => 'CManagerController@createUser',
+    ]);
+
+    Route::post('/cmanager/create-user', [
+        'as'        => 'create-user',
+        'uses'      => 'CManagerController@postCreateUser',
+    ]);
+
+
 
 });
 
@@ -101,6 +124,8 @@ Route::group([
         'as' => 'administrator',
         'uses' => 'UserController@index'
     ]);
+
+
 
 });
 

@@ -78,8 +78,9 @@ Route::group([
         'uses'          => 'CManagerController@index'
     ]);
 
-});
 
+
+});
 
 
 /*
@@ -88,7 +89,7 @@ Route::group([
 
 Route::group([
     'middleware'    => ['auth', 'roles'],
-    'roles'         => ['company manager'],
+    'roles'         => ['company manager', 'administrator'],
 ], function() {
 
     Route::get('/cmanager', [
@@ -96,15 +97,27 @@ Route::group([
         'uses'      => 'CManagerController@index'
     ]);
 
-    Route::get('/cmanager/create-user', [
-        'as'        => 'create-user',
-        'uses'      => 'CManagerController@createUser',
-    ]);
+//    Route::get('/cmanager/create-user', [
+//        'as'        => 'create-user',
+//        'uses'      => 'CManagerController@createUser',
+//    ]);
+//
+//    Route::post('/cmanager/create-user', [
+//        'as'        => 'create-user',
+//        'uses'      => 'CManagerController@postCreateUser',
+//    ]);
+//
+//    Route::get('/cmanager/{delete}/user', [
+//        'as'        => 'delete-user',
+//        'uses'      => 'CManagerController@deleteUser',
+//    ]);
+//
+//    Route::post('/cmanager/{delete}/user', [
+//
+//    ]);
 
-    Route::post('/cmanager/create-user', [
-        'as'        => 'create-user',
-        'uses'      => 'CManagerController@postCreateUser',
-    ]);
+    Route::resource('/cmanager/user', 'CManagerController', ['except' => ['destroy']]);
+    Route::get('/cmanager/user/{delete}/delete', 'CManagerController@destroy');
 
 
 

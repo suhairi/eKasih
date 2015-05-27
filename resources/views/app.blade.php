@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>MBAS : KPKT</title>
+	<title>MBAS : PPKB</title>
 
 	<link rel="shortcut icon" href="{{{ asset('images/favicon__.png') }}}">
 
@@ -56,13 +56,12 @@
 
                         @if(Auth::user()->hasRole('administrator'))
                             <ul class="nav navbar-nav">
-                                <li><a href="#">Admin Menu 1</a></li>
+                                <li><a href="/cmanager/create-user">Create User</a></li>
                                 <li><a href="#">Admin Menu 2</a></li>
                                 <li><a href="#">Admin Menu 3</a></li>
                                 <li><a href="#">Admin Menu 4</a></li>
                             </ul>
                         @endif
-
 
                         @if(Auth::user()->hasRole('manager'))
                             <ul class="nav navbar-nav">
@@ -75,7 +74,7 @@
 
                         @if(Auth::user()->hasRole('company manager'))
                             <ul class="nav navbar-nav">
-                                <li><a href="/cmanager/create-user">Create User</a></li>
+                                <li><a href="/cmanager/user/create">Create User</a></li>
                                 <li><a href="#">CManager Menu 2</a></li>
                                 <li><a href="#">CManager Menu 3</a></li>
                                 <li><a href="#">CManager Menu 4</a></li>

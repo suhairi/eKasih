@@ -51,7 +51,7 @@ class DatabaseSeeder extends Seeder {
 
         User::create([
             'id'            => 4,
-            'name'          => 'Comapany Manager',
+            'name'          => 'Company Manager',
             'email'         => 'cmanager@gmail.com',
             'password'      => Hash::make('password'),
             'role_id'       => 4,

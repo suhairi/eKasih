@@ -22,6 +22,4 @@ class AdministratorController extends Controller {
 		return view('home');
 	}
 
-
-
 }

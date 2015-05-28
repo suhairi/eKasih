@@ -22,7 +22,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 *
 	 * @var array
 	 */
+<<<<<<< HEAD
 	protected $fillable = ['name', 'email', 'password', 'role_id'];
+=======
+	protected $fillable = ['name', 'email', 'password'];
+>>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -31,6 +35,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
+<<<<<<< HEAD
 
     // ################################################################################
 
@@ -68,4 +73,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     private function checkIfUserHasRole($need_role) {
         return (strtolower($need_role) == strtolower($this->have_role->name)) ? true : false;
     }
+=======
+>>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
 }

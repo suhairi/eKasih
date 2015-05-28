@@ -44,11 +44,6 @@
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
-					@if (Auth::guest())
-						{{--<li><a href="{{ url('/login') }}">Login</a></li>--}}
-						{{--<li><a href="{{ url('/auth/register') }}">Register</a></li>--}}
-					@else
-
 
                         @if(Auth::user()->hasRole('root'))
                             <ul class="nav navbar-nav">
@@ -61,7 +56,7 @@
 
                         @if(Auth::user()->hasRole('administrator'))
                             <ul class="nav navbar-nav">
-                                <li><a href="/cmanager/create-user">Create User</a></li>
+                                <li><a href="/cmanager/user/create">Create User</a></li>
                                 <li><a href="#">Admin Menu 2</a></li>
                                 <li><a href="#">Admin Menu 3</a></li>
                                 <li><a href="#">Admin Menu 4</a></li>

@@ -1,14 +1,9 @@
 <?php namespace App\Http\Controllers;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 //use Illuminate\Http\Request;
 use Request;
 
-=======
->>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
-=======
->>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
 class HomeController extends Controller {
 
 	/*
@@ -23,12 +18,11 @@ class HomeController extends Controller {
 	*/
 
 	/**
-<<<<<<< HEAD
-<<<<<<< HEAD
 	 * Show the application dashboard to the user.
 	 *
 	 * @return Response
 	 */
+
 	public function index()
 	{
         if(\Auth::guest())
@@ -70,32 +64,4 @@ class HomeController extends Controller {
         return redirect('/');
     }
 
-
-
-=======
-=======
->>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
-	public function __construct()
-	{
-		$this->middleware('auth');
-	}
-
-	/**
-	 * Show the application dashboard to the user.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		return view('home');
-	}
-
-<<<<<<< HEAD
->>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
-=======
->>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
 }

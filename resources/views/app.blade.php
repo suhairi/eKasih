@@ -4,46 +4,25 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 	<title>MBAS : PPKB</title>
 
 	<link rel="shortcut icon" href="{{{ asset('images/favicon__.png') }}}">
-=======
-	<title>Laravel</title>
->>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
-=======
-	<title>Laravel</title>
->>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
+
 
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 
 	<!-- Fonts -->
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 	<link href="{{ asset('/css/google.roboto.css') }}" rel="stylesheet">
-=======
-	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
->>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
-=======
-	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
->>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 		<script src="{{ asset('js/html5shiv.js') }}"></script>
   		<script src="{{ asset('js/respond.min.js') }}"></script>
-=======
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
->>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
-=======
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
->>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
+
 	<![endif]-->
 </head>
 <body>
@@ -56,15 +35,9 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 				<a class="navbar-brand" href="#">eKasih</a>
-=======
-				<a class="navbar-brand" href="#">Laravel</a>
->>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
-=======
-				<a class="navbar-brand" href="#">Laravel</a>
->>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
+
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -74,8 +47,6 @@
 
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
-<<<<<<< HEAD
-<<<<<<< HEAD
 						{{--<li><a href="{{ url('/login') }}">Login</a></li>--}}
 						{{--<li><a href="{{ url('/auth/register') }}">Register</a></li>--}}
 					@else
@@ -133,9 +104,7 @@
                                 <li><a href="{{ url('/logout') }}">Logout</a></li>
                             </ul>
                         </li>
-=======
-=======
->>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
+
 						<li><a href="{{ url('/auth/login') }}">Login</a></li>
 						<li><a href="{{ url('/auth/register') }}">Register</a></li>
 					@else
@@ -145,10 +114,6 @@
 								<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
 							</ul>
 						</li>
-<<<<<<< HEAD
->>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
-=======
->>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
 					@endif
 				</ul>
 			</div>
@@ -158,17 +123,9 @@
 	@yield('content')
 
 	<!-- Scripts -->
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 	<script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-=======
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
->>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
-=======
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
->>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
+
 </body>
 </html>

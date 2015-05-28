@@ -135,13 +135,7 @@ return [
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
-<<<<<<< HEAD
-<<<<<<< HEAD
         'Illuminate\Html\HtmlServiceProvider',
-=======
->>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
-=======
->>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
 
 		/*
 		 * Application Service Providers...
@@ -199,14 +193,8 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
-<<<<<<< HEAD
-<<<<<<< HEAD
         'Form'      => 'Illuminate\Html\FormFacade',
         'Html'      => 'Illuminate\Html\HtmlFacade',
-=======
->>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
-=======
->>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
 
 	],
 

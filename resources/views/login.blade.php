@@ -19,27 +19,27 @@
 					@endif
 
 					{!! Form::open(['class' => 'form-horizontal', 'role' => 'form']) !!}
-                    
+
                             <div class="form-group">
                                 {!! Form::label('email', 'Email Address : ', ['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-6">
                                 {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Email Address']) !!}
                                 </div>
                             </div>
-                    
+
                             <div class="form-group">
                                 {!! Form::label('password', 'Password : ', ['class' => 'col-md-4 control-label']) !!}
                                 <div class="col-md-6">
                                 {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password']) !!}
                                 </div>
                             </div>
-                    
+
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                 {!! Form::submit('Login', ['class' => 'btn btn-primary form-control']) !!}
                                 </div>
                             </div>
-                    
+
                         {!! Form::close() !!}
 				</div>
 			</div>

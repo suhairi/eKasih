@@ -35,15 +35,7 @@ class RedirectIfAuthenticated {
 	{
 		if ($this->auth->check())
 		{
-<<<<<<< HEAD
-<<<<<<< HEAD
-			return new RedirectResponse(url('/'));
-=======
 			return new RedirectResponse(url('/home'));
->>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
-=======
-			return new RedirectResponse(url('/home'));
->>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
 		}
 
 		return $next($request);

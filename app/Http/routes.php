@@ -11,8 +11,7 @@
 |
 */
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 Route::get('/', 'HomeController@index');
 
 Route::get('/login', 'HomeController@getLogin');
@@ -143,19 +142,3 @@ Route::group([
 
 
 });
-
-=======
-=======
->>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
-Route::get('/', 'WelcomeController@index');
-
-Route::get('home', 'HomeController@index');
-
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
-<<<<<<< HEAD
->>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
-=======
->>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080

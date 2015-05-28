@@ -10,18 +10,19 @@
 
     @if(count($users) > 0)
         @foreach($users as $no => $user)
-            <tr>
-                <td>{{ ++$no }}</td>
-                <td>{{ strtoupper($user->name) }}</td>
-                <td>{{ $user->email }}</td>
-                <td>{{ $user->role->name }}</td>
-                <td align="center">
-                    <a href="{{ url('/cmanager/user/' . $user->id) }}"><span class="glyphicon glyphicon-edit"></span></a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="{{ url('/cmanager/user/' . $user->id . '/delete') }}"><span class="glyphicon glyphicon-trash"></span></a>
-                </td>
-
-            </tr>
+            @if($user->email != 'suhairi81@gmail.com')
+                <tr>
+                    <td>{{ ++$no }}</td>
+                    <td>{{ strtoupper($user->name) }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->role->name }}</td>
+                    <td align="center">
+                        <a href="{{ url('/cmanager/user/' . $user->id) }}"><span class="glyphicon glyphicon-edit"></span></a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="{{ url('/cmanager/user/' . $user->id . '/delete') }}"><span class="glyphicon glyphicon-trash"></span></a>
+                    </td>
+                </tr>
+            @endif
         @endforeach
     @endif
 

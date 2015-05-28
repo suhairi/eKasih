@@ -29,7 +29,7 @@
 <div class="form-group">
     {!! Form::label('role_id', 'User Level ', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::select('role_id', $selectRoles, 0, ['class' => 'form-control']) !!}
+        {!! Form::select('role_id', $selectRoles, $user->role_id, ['class' => 'form-control']) !!}
     </div>
 </div>
 

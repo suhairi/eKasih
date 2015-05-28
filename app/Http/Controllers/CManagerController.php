@@ -6,8 +6,6 @@ use App\Http\Controllers\Controller;
 
 use App\Http\Requests\UserFormRequest;
 
-//use Request;
-
 use App\Role;
 use App\User;
 
@@ -61,7 +59,7 @@ class CManagerController extends Controller {
     public function show($id) {
 
         $user = User::findOrFail($id);
-        $users = User::paginate(10);
+        $users = User::orderBy('role_id', 'asc')->paginate(10);
         $roles = Role::all();
         $selectRoles = [0 => 'Select Level...'];
 

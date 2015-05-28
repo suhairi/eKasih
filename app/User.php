@@ -44,8 +44,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
         $this->have_role = $this->getUserRole();
 
-//        dd($roles);
-
 //        if($this->have_role->name == 'Root') {
 //            return true;
 //        }
@@ -63,7 +61,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     }
 
     private function getUserRole() {
-//        dd($this->role()->getResults());
         return $this->role()->getResults();
     }
 

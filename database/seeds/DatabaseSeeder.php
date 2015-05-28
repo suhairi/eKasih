@@ -3,8 +3,11 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use App\Role;
 use App\User;
+=======
+>>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
 =======
 >>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
 
@@ -19,6 +22,7 @@ class DatabaseSeeder extends Seeder {
 	{
 		Model::unguard();
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 //		 $this->call('RoleTableSeeder');
 
@@ -102,6 +106,11 @@ class DatabaseSeeder extends Seeder {
 
 
 
+=======
+		// $this->call('UserTableSeeder');
+	}
+
+>>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
 =======
 		// $this->call('UserTableSeeder');
 	}

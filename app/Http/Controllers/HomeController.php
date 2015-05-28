@@ -1,9 +1,12 @@
 <?php namespace App\Http\Controllers;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //use Illuminate\Http\Request;
 use Request;
 
+=======
+>>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
 =======
 >>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
 class HomeController extends Controller {
@@ -20,6 +23,7 @@ class HomeController extends Controller {
 	*/
 
 	/**
+<<<<<<< HEAD
 <<<<<<< HEAD
 	 * Show the application dashboard to the user.
 	 *
@@ -69,6 +73,8 @@ class HomeController extends Controller {
 
 
 =======
+=======
+>>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
 	 * Create a new controller instance.
 	 *
 	 * @return void
@@ -88,5 +94,8 @@ class HomeController extends Controller {
 		return view('home');
 	}
 
+<<<<<<< HEAD
+>>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
+=======
 >>>>>>> fb956cc7167e13157c4028a9237ee6a5017c1080
 }

@@ -14,11 +14,11 @@
 
                 {!! Form::open(['action' => 'CManagerController@store', 'class' => 'form-horizontal']) !!}
 
-                    @include('...forms.users._form', ['button' => '   Add User   '])
+                    @include('forms.users._form', ['button' => '   Add User   '])
 
                 {!! Form::close() !!}
 
-                @include('...forms.users._listing')
+                @include('forms.users._listing')
 
                 </div>
             </div>

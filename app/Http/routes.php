@@ -116,8 +116,15 @@ Route::group([
 ], function() {
 
     Route::get('/user', [
-        'as' => 'administrator',
-        'uses' => 'UserController@index'
+        'as'    => 'administrator',
+        'uses'  => 'UserController@index'
     ]);
+
+    Route::get('/user/carian', [
+        'as'    => 'carian',
+        'uses'  => 'UserController@carian'
+    ]);
+
+    Route::resource('/user/peserta', 'UserController', ['except' => ['destory']]);
 
 });

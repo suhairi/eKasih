@@ -14,11 +14,11 @@
 
                 {!! Form::model($user, ['method' => 'PATCH', 'action' => ['CManagerController@update', $user->id], 'class' => 'form-horizontal']) !!}
 
-                    @include('...forms.users._form', ['button' => '   Update User  '])
+                    @include('forms.users._form', ['button' => '   Update User  '])
 
                 {!! Form::close() !!}
 
-                @include('...forms.users._listing')
+                @include('forms.users._listing')
 
                 </div>
             </div>

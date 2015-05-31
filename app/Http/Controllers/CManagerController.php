@@ -22,6 +22,7 @@ class CManagerController extends Controller {
         $users = User::orderBy('role_id', 'asc')->paginate(10);
         $roles = Role::all();
         $selectRoles = [0 => 'Select Level...'];
+        $role_id = 0;
 
         foreach($roles as $role) {
             $selectRoles[$role->id] = $role->name;
@@ -29,7 +30,8 @@ class CManagerController extends Controller {
 
         return view('cmanager.createUser')
             ->with('selectRoles', $selectRoles)
-            ->with('users', $users);
+            ->with('users', $users)
+            ->with('role_id', $role_id);
     }
 
     public function store(UserFormRequest $request) {
@@ -67,10 +69,13 @@ class CManagerController extends Controller {
             $selectRoles[$role->id] = $role->name;
         }
 
+        $role_id = $user->role_id;
+
         return view('cmanager.editUser')
             ->with('selectRoles', $selectRoles)
             ->with('user', $user)
-            ->with('users', $users);
+            ->with('users', $users)
+            ->with('role_id', $role_id);
     }
 
     public function update(UserFormRequest $request, $id) {

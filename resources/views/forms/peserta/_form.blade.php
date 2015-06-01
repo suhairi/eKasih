@@ -1,14 +1,14 @@
 <div class="form-group">
     {!! Form::label('photo', 'Foto Peserta', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::file('photo', null, ['class' => 'form-control']) !!}
+        {!! Form::file('photo', ['class' => 'form-control']) !!}
     </div>
 </div>
 
 <div class="form-group">
     {!! Form::label('noKP', 'No KP * ', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::text('noKP', null, ['class' => 'form-control', 'onkeyup' => 'convertToUppercase(this)']) !!}
+        {!! Form::text('noKP', null, ['class' => 'form-control', 'placeholder' => 'Contoh : 880515025513','onkeyup' => 'convertToUppercase(this)']) !!}
     </div>
 </div>
 
@@ -27,37 +27,51 @@
 </div>
 
 <div class="form-group">
+    {!! Form::label('pekerjaan', 'Pekerjaan *', ['class' => 'col-md-4 control-label']) !!}
+    <div class="col-md-6">
+        {!! Form::text('pekerjaan', null, ['class' => 'form-control', 'onkeyup' => 'convertToUppercase(this)']) !!}
+    </div>
+</div>
+
+<div class="form-group">
     {!! Form::label('noTel', 'No Telefon ', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::text('noTel', null, ['class' => 'form-control', 'onkeyup' => 'convertToUppercase(this)']) !!}
+        {!! Form::text('noTel', null, ['class' => 'form-control', 'placeholder' => 'Contoh : 0123456789', 'onkeyup' => 'convertToUppercase(this)']) !!}
+    </div>
+</div>
+
+<div class="form-group">
+    {!! Form::label('jantina', 'Jantina *', ['class' => 'col-md-4 control-label']) !!}
+    <div class="col-md-6">
+        {!! Form::select('jantina', ['' => 'Jantina', 'LELAKI' => 'Lelaki', 'PEREMPUAN' => 'Perempuan'], null, ['class' => 'form-control']) !!}
     </div>
 </div>
 
 <div class="form-group">
     {!! Form::label('bangsa', 'Bangsa *', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::text('bangsa', null, ['class' => 'form-control', 'onkeyup' => 'convertToUppercase(this)']) !!}
+        {!! Form::select('bangsa', ['' => 'Bangsa', 'MELAYU' => 'Melayu', 'CINA' => 'Cina', 'INDIA' => 'India'], null, ['class' => 'form-control']) !!}
     </div>
 </div>
 
 <div class="form-group">
     {!! Form::label('agama', 'Agama *', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::text('agama', null, ['class' => 'form-control', 'onkeyup' => 'convertToUppercase(this)']) !!}
+        {!! Form::select('agama', ['' => 'Agama', 'ISLAM' => 'Islam', 'BUDDHA' => 'Buddha', 'HINDU' => 'Hindu'], null, ['class' => 'form-control']) !!}
     </div>
 </div>
 
 <div class="form-group">
     {!! Form::label('perkahwinan', 'Status Perkahwinan *', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::text('perkahwinan', null, ['class' => 'form-control', 'onkeyup' => 'convertToUppercase(this)']) !!}
+        {!! Form::select('perkahwinan', ['' => 'Status Perkahwinan', 'BUJANG' => 'Bujang', 'BERKAHWIN' => 'Berkahwin', 'DUDA' => 'Duda', 'JANDA' => 'Janda'], null, ['class' => 'form-control']) !!}
     </div>
 </div>
 
 <div class="form-group">
     {!! Form::label('pendidikan', 'Tahap Pendidikan *', ['class' => 'col-md-4 control-label']) !!}
     <div class="col-md-6">
-        {!! Form::text('pendidikan', null, ['class' => 'form-control', 'onkeyup' => 'convertToUppercase(this)']) !!}
+        {!! Form::select('pendidikan', ['' =>'Tahap Pendidikan', 'TIADA' => 'Tiada', 'SIJIL' => 'Sijil', 'DIPLOMA' => 'Diploma', 'IJAZAH' => 'Ijazah', 'SARJANA' => 'Sarjana', 'PHD' => 'PhD'], null, ['class' => 'form-control', 'onkeyup' => 'convertToUppercase(this)']) !!}
     </div>
 </div>
 

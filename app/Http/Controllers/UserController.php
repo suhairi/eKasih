@@ -6,23 +6,55 @@ use App\Http\Controllers\Controller;
 use App\Peserta;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\PesertaFormRequest;
 
 class UserController extends Controller {
 
 	public function index() {
 
-        return view('carian');
+        \Session::flush('carianNoKP');
+        return redirect('/user/carian');
     }
 
     public function carian() {
-        return view('carian');
+            $peserta = null;
+
+        return view('carian')
+            ->with('peserta', $peserta);
+    }
+
+    public function resultCarian() {
+        $request = \Request::all();
+
+        $validation = \Validator::make($request, [
+            'noKP'  => 'required|digits_between:6,12'
+        ]);
+
+        if($validation->fails()){
+            return redirect('/user/carian')
+                ->withInput()
+                ->withErrors($validation->errors());
+        }
+
+        $noKP = \Request::input('noKP');
+
+        \Session::put('carianNoKP', $noKP);
+
+        $peserta = Peserta::find($noKP);
+
+        return view('carian')
+            ->with('peserta', $peserta);
+
+        dd($request);
     }
 
     public function create() {
         return view('user.createPeserta');
     }
 
-    public function store(Request $request) {
+    public function store(PesertaFormRequest $request) {
+
+        $peserta = new Peserta;
 
         if($request->hasFile('photo')){
 
@@ -34,17 +66,26 @@ class UserController extends Controller {
 
                 $request->file('photo')->move($destination, $filename);
 
-                dd($destination);
+                $peserta->photo = $filename;
+
             } else {
                 \Session::flash('fail', 'Invalid File Upload. Posible Hacking!');
                 return redirect('/logout');
             }
         }
 
-        dd($destination);
-        dd($request->input('photo'));
+        $peserta->noKP          = \Request::input('noKP');
+        $peserta->nama          = \Request::input('nama');
+        $peserta->alamat        = \Request::input('alamat');
+        $peserta->jantina       = \Request::input('jantina');
+        $peserta->noTel         = \Request::input('noTel');
+        $peserta->agama         = \Request::input('agama');
+        $peserta->bangsa        = \Request::input('bangsa');
+        $peserta->pekerjaan     = \Request::input('pekerjaan');
+        $peserta->perkahwinan   = \Request::input('perkahwinan');
+        $peserta->pendidikan    = \Request::input('pendidikan');
 
-        if(Peserta::create($request->all())){
+        if($peserta->save()){
             \Session::flash('success', 'Success');
         } else {
             \Session::flash('fail', 'Failed');
@@ -55,6 +96,15 @@ class UserController extends Controller {
 
     public function update(Request $request, $id) {
         dd($id);
+    }
+
+    protected function checkNoKP($noKP) {
+        $exist = Peserta::find($noKP);
+
+        if(count($exist) > 0 )
+            return true;
+        else
+            return false;
     }
 
 

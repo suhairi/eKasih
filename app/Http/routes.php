@@ -85,7 +85,7 @@ Route::group([
 
 
 /*
- *  #############   COMPANY MANAGER   ####################
+ *  #################   COMPANY MANAGER   ####################
  */
 
 Route::group([
@@ -101,13 +101,11 @@ Route::group([
     Route::resource('/cmanager/user', 'CManagerController', ['except' => ['destroy']]);
     Route::get('/cmanager/user/{delete}/delete', 'CManagerController@destroy');
 
-
-
 });
 
 
 /*
- *  #############   USER   ####################
+ *  #################   USER   ####################
  */
 
 Route::group([
@@ -125,6 +123,14 @@ Route::group([
         'uses'  => 'UserController@carian'
     ]);
 
-    Route::resource('/user/peserta', 'UserController', ['except' => ['destory']]);
+    Route::post('/user/carian', [
+        'as'    => 'resultCarian',
+        'uses'  => 'UserController@resultCarian'
+    ]);
+
+    Route::resource('/user/peserta', 'UserController', ['except' => ['destroy']]);
+
+    Route::resource('/user/bantuan', 'User\BantuanController', ['except' => ['destroy']]);
+
 
 });

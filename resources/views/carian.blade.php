@@ -11,12 +11,12 @@
 
                 @include('errors.notifications')
 
-                {!! Form::open(['action' => 'UserController@carian', 'class' => 'form-horizontal']) !!}
+                {!! Form::open(['action' => 'UserController@resultCarian', 'class' => 'form-horizontal']) !!}
 
                     <div class="form-group">
                         {!! Form::label('noKP', 'No Kad Pengenalan : ', ['class' => 'col-md-4 control-label']) !!}
                         <div class="col-md-3">
-                        {!! Form::text('noKP', null, ['class' => 'form-control', 'placeholder' => 'No KP']) !!}
+                        {!! Form::text('noKP', null, ['class' => 'form-control', 'placeholder' => 'No KP', 'id' => 'carian']) !!}
                         </div>
                     </div>
 
@@ -30,4 +30,4 @@
     </div>
 </div>
 
-@stop;
+@stop

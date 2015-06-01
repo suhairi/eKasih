@@ -20,8 +20,7 @@
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
 
-		<script src="{{ asset('js/html5shiv.js') }}"></script>
-  		<script src="{{ asset('js/respond.min.js') }}"></script>
+
 
 	<![endif]-->
 </head>
@@ -58,7 +57,7 @@
 
                         @if(Auth::user()->hasRole('administrator'))
                             <ul class="nav navbar-nav">
-                                <li><a href="/cmanager/user/create">Create User</a></li>
+                                <li><a href="{{ url('/cmanager/user/create') }}">Create User</a></li>
                                 <li><a href="#">Admin Menu 2</a></li>
                                 <li><a href="#">Admin Menu 3</a></li>
                                 <li><a href="#">Admin Menu 4</a></li>
@@ -76,7 +75,7 @@
 
                         @if(Auth::user()->hasRole('company manager'))
                             <ul class="nav navbar-nav">
-                                <li><a href="/cmanager/user/create">Create User</a></li>
+                                <li><a href="{{ url('/cmanager/user/create') }}">Create User</a></li>
                                 <li><a href="#">CManager Menu 2</a></li>
                                 <li><a href="#">CManager Menu 3</a></li>
                                 <li><a href="#">CManager Menu 4</a></li>
@@ -88,10 +87,11 @@
                                 <li><a href="{{ route('carian') }}">Carian</a></li>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                     Peserta
+                                     Daftar
                                     <span class="caret"></span></a>
                                     <ul class="dropdown-menu" role="menu">
-                                        <li><a href="{{ route('user.peserta.create') }}">Daftar</a></li>
+                                        <li><a href="{{ route('user.peserta.create') }}">Peserta</a></li>
+                                        <li><a href="{{ route('user.bantuan.create') }}">Bantuan</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#">User Menu 3</a></li>
@@ -115,9 +115,14 @@
 	@yield('content')
 
 	<!-- Scripts -->
-
 	<script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+	<script src="{{ asset('js/html5shiv.js') }}"></script>
+    <script src="{{ asset('js/respond.min.js') }}"></script>
+
+
+
 
 </body>
 </html>

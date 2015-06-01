@@ -7,6 +7,10 @@
   <div class="alert alert-warning">{{ Session::get('fail') }}</div>
 @endif
 
+@if(Session::has('message'))
+  <div class="alert alert-warning">{{ Session::get('message') }}</div>
+@endif
+
 
 @if (count($errors) > 0)
     <div class="alert alert-danger">
